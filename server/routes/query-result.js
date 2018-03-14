@@ -32,7 +32,8 @@ router.get(
         connectionId: query.connectionId,
         cacheKey: query._id,
         queryName: query.name,
-        queryText: query.queryText
+        queryText: query.queryText,
+        config: req.config
       }
       getQueryResult(data, function(err, queryResult) {
         if (err) {

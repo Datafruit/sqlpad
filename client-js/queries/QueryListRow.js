@@ -23,8 +23,9 @@ class QueryListRow extends React.Component {
       </Label>
     ))
 
-    const tableUrl = `${config.baseUrl}/query-table/${query._id}`
-    const chartUrl = `${config.baseUrl}/query-chart/${query._id}`
+    let baseUrl = (config.baseUrl || '').replace(/\/$/, '')
+    const tableUrl = `${baseUrl}/query-table/${query._id}`
+    const chartUrl = `${baseUrl}/query-chart/${query._id}`
 
     const classNames = ['list-group-item']
     if (selectedQuery && selectedQuery._id === query._id) {
